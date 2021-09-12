@@ -7,4 +7,15 @@ module.exports = {
     // in files only using JSX (no state or React methods)
     ['@babel/preset-react', { runtime: 'automatic' }],
   ],
+  plugins: [
+    [
+      'babel-plugin-transform-imports',
+      {
+        '@material-ui/core': {
+          transform: '@material-ui/core/${member}',
+          preventFullImport: true,
+        },
+      },
+    ],
+  ],
 };
